@@ -15,25 +15,36 @@ robot_image = pygame.transform.smoothscale(robot_image, (desired_width, desired_
 
 #Define robot parameters
 wheel_radius = 0.05
-wheel_base = 0.3
+wheel_base = 3
 
 def differential_drive_kinematics(state, t, v_left, v_right):
     x, y, theta = state
-    v = (v_left + v_right)/2 * wheel_radius #Linear velocity
-    omega = (v_right - v_left)/wheel_base * wheel_radius
-
+    v = (v_left + v_right)/2  #Linear velocity
+    omega = (v_right - v_left)/wheel_base 
+    print(f"t={t:.2f}, v_left: {v_left}, v_right: {v_right}, v: {v}, omega: {omega}")
     dxdt = v*np.cos(theta)
     dydt = v*np.sin(theta)
     dthetadt = omega
+    print(f"State: x={x}, y={y}, theta={theta}, v={v}, omega={omega}")
+    print(f"dxdt={dxdt}, dydt={dydt}, dthetadt={dthetadt}")
 
     return [dxdt, dydt, dthetadt]
 
 
 def update_robot_state(initial_state, t, v_left, v_right):
-    return odeint(differential_drive_kinematics, initial_state, t, args=(v_left, v_right)) 
-
+    print(f"Initial State: {initial_state}")
+    print(f"Time: {t}, v_left: {v_left}, v_right: {v_right}")
+    new_state = odeint(differential_drive_kinematics, initial_state, t, args=(v_left, v_right))
+    
+    # Print the new state after integration
+    print("New State after integration:")
+    for idx, state in enumerate(new_state):
+        print(f"Time: {t[idx]:.2f}, State: x={state[0]}, y={state[1]}, theta={state[2]}")
+    
+    return new_state
 
 def draw_robot(screen, x, y, theta):
+    print(f"Drawing Robot at x={x}, y={y}, theta={theta}")
     # Rotate the image based on the robot's orientation (theta)
     rotated_image = pygame.transform.rotate(robot_image, -math.degrees(theta))
 
