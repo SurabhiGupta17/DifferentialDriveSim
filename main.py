@@ -1,7 +1,5 @@
 import pygame
 import sys
-
-# Import the other modules (to be implemented)
 import forward_kinematics
 import position_controller
 
