@@ -53,9 +53,11 @@ distance_error: Euclidean distance to the goal position
 angular_error: difference between current orientation and desired orientation
 ```
 
+
 <p align="center">
     <img src="assets/Position_Controller.gif" alt="Position Controller" width="60%">
 </p>
+
 
 ## Files
 `main.py` : Main simulation loop and visualization
