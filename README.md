@@ -10,7 +10,9 @@ This project simulates the forward kinematics and position control using PID of 
 - Visual representation of wheel rotations and robot orientation
 - Speed control with acceleration and deceleration
 
-<centre><img src="assets/opening_page.png" alt="Robotic Arm" width="60%"></centre>
+<div style="text-align: center;">
+    <img src="assets/opening_page.png" alt="Robotic Arm" width="60%">
+</div>
 
 ## Robot Kinematics
 
@@ -34,7 +36,10 @@ L: distance between the wheels (wheel base)
 
 It takes the initial state of the robot, the wheel velocities and the time step as input to provide the updated robot state as the output. 
 
-<centre><img src="assets/Forward_Kinematics.gif" alt="Forward Kinematics" width="60%"></centre>
+
+<div style="text-align: center;">
+    <img src="assets/Forward_Kinematics.gif" alt="Forward Kinematics" width="60%">
+</div>
 
 ### Position Controller
 There are two controllers implemented here, one for linear velocity and one for angular velocity. Both use the basic form of a proportional controller:
@@ -48,7 +53,9 @@ Kp, Kp_angular: proportional gains for linear and angular velocity
 distance_error: Euclidean distance to the goal position
 angular_error: difference between current orientation and desired orientation
 ```
-<centre><img src="assets/Position Controller.gif" alt="Forward Kinematics" width="60%"></centre>
+<div style="text-align: center;">
+    <img src="assets/Position_Controller.gif" alt="Position Controller" width="60%">
+</div>
 
 ## Files
 `main.py` : Main simulation loop and visualization
