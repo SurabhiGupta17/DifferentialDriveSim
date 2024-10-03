@@ -10,9 +10,9 @@ This project simulates the forward kinematics and position control using PID of 
 - Visual representation of wheel rotations and robot orientation
 - Speed control with acceleration and deceleration
 
-<div style="text-align: center;">
+<p align="center">
     <img src="assets/opening_page.png" alt="Robotic Arm" width="60%">
-</div>
+</p>
 
 ## Robot Kinematics
 
@@ -37,9 +37,9 @@ L: distance between the wheels (wheel base)
 It takes the initial state of the robot, the wheel velocities and the time step as input to provide the updated robot state as the output. 
 
 
-<div style="text-align: center;">
-    <img src="assets/Forward_Kinematics.gif" alt="Forward Kinematics" width="60%">
-</div>
+
+<img src="assets/Forward_Kinematics.gif" alt="Forward Kinematics" width="60%" class="center">
+
 
 ### Position Controller
 There are two controllers implemented here, one for linear velocity and one for angular velocity. Both use the basic form of a proportional controller:
