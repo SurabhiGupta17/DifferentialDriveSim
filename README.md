@@ -10,6 +10,7 @@ This project simulates the forward kinematics and position control using PID of 
 - Visual representation of wheel rotations and robot orientation
 - Speed control with acceleration and deceleration
 
+![Robotic Arm](assets/opening_page.png.png)
 
 ## Robot Kinematics
 
